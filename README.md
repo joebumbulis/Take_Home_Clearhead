@@ -1,9 +1,11 @@
+* Began with understanding the task, how to access the DOM and add code to it .
+
 Tasks List:
 -[ ] search Vitamix site for libraries to use
 -[ ] build out file structure - index.html, sass, react
+-[ ] insert HTML into DOM using javascript
 -[ ] create modal on timer  
   - [ ] modal will pop up 3 seconds after landing on page
-  - [ ]
   - [ ] get copy
   - [ ] display one RANDOM item from shopping cart
     - [ ] use cookies or local storage (window.) to gain access to the shopping cart
@@ -23,7 +25,10 @@ Planning:
 [] when CTA button is clicked / then cart page opens & modal closes
 [] when cart item pic or text clicked, / then opens to item page
 
-
+* Set up file system:
+  * Unclear about file structure approach- created index.html and main.css; but emailed Case about clarity around using React.js
+    * No react, build in the actual DOM/ create experimental page.
+  * emailed Case about clarity about how much build out does the landing page need in the comp v1.
 
 Notes:
 
