@@ -3,7 +3,7 @@ body {
 }
 
 
-.modal {
+/*.modal {
   z-index: 1000;
   background-color: #fff;
   position: absolute;
@@ -12,9 +12,9 @@ body {
   width: 450px;
   height: 450px;
   border: .1rem solid #E1E1E1;
-}
+}*/
 
-.hidden {
+/*.hidden {
   display: none;
 }
 .close-modal-btn {
@@ -23,7 +23,7 @@ body {
   color: #E1E1E1;
   font-size: 1.4rem;
   font-weight: 100;
-}
+}*/
 
 .close-modal-btn:hover {
   cursor: pointer;
