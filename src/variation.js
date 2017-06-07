@@ -4,9 +4,7 @@
 function variation() {
   $(function() {
     var docHeight = $(document).height();
-
     $("body").append("<div id='overlay'></div>");
-
     $("#overlay").height(docHeight).css({
       opacity: 0.4,
       position: "absolute",
@@ -23,6 +21,10 @@ function variation() {
   );
   var closeBtn = $modal.find(".close-modal-btn");
   var ctaBtn = $modal.find(".cta-cart-button");
+  $("#overlay").on("click", function() {
+    $(".modal").addClass("hidden");
+    $("#overlay").remove();
+  });
   closeBtn.on("click", function() {
     $(".modal").addClass("hidden");
   });
