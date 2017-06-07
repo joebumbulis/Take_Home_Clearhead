@@ -31,6 +31,16 @@ Planning:
   * emailed Case about clarity about how much build out does the landing page need in the comp v1.
 
 Notes:
+* Began with creating a styling the modal. Copied colors from Vitamix.com.
+* Created Overlay- problem with creating a click handler to click on the overlay (ie, click anywhere but the modal except the modal's "x" close button) in order to close the modal.
+  * Solved it with this code and added the addClass for the overlay to the "x" handler
+``  $("#overlay").on("click", function() {
+    $(".modal").addClass("hidden");
+    $("#overlay").addClass("hidden");
+  });``
+
+* Primary issue: GETting the cart information from the home page of Vitamix. Tried running a GET request to both https://www.vitamix.com/ & https://www.vitamix.com/Shop/Shopping-Cart in order to see if JSON came back as a usable object. This didn't work.
+
 
 ## Developer Candidate Homework
 
