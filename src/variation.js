@@ -5,13 +5,24 @@ $.ajax({
   dataType: "html",
   url: "https://www.vitamix.com/Shop/Shopping-Cart"
 }).then(function(data, status) {
+  //check data in cart
+  //if the cart is empty then do nothing
+  //otherwise launch timer for openModal
   console.log(data);
 });
 
+//use jQuery to grab info from data to populate the modal with:
+//picture of item
+//title
+//Qty
+//color
+//number of items in cart
+//link to item's page
 function openModal() {
   $(function() {
     var docHeight = $(document).height();
     $("body").append("<div id='overlay'></div>");
+
     $("#overlay").on("click", function() {
       $(".modal").addClass("hidden");
       $("#overlay").addClass("hidden");
@@ -44,7 +55,8 @@ function openModal() {
   });
   ctaBtn.on("click", function() {
     window.location.href = "https://www.vitamix.com/Shop/Shopping-Cart";
-  });
+  })
+
   $container.append($modal);
 }
 
@@ -54,3 +66,14 @@ function openModal() {
 //
 
 setTimeout(openModal, 3000);
+
+$('.modal').css({
+      "z-index": '1000',
+      "background-color": "#fff",
+      'position': 'absolute',
+      'left': '20%',
+      'top': '20%',
+      'width': '450px',
+      'height': '450px',
+      'border': '.1rem', 'solid' '#E1E1E1'
+})

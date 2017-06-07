@@ -29,6 +29,8 @@ Planning:
   * Unclear about file structure approach- created index.html and main.css; but emailed Case about clarity around using React.js
     * No react, build in the actual DOM/ create experimental page.
   * emailed Case about clarity about how much build out does the landing page need in the comp v1.
+  * created a local html file to use for the initial modal build
+  * created separate CSS file, but will need to import it or write in the styling into the js
 
 Notes:
 * Began with creating a styling the modal. Copied colors from Vitamix.com.
