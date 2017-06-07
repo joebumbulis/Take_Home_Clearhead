@@ -1,28 +1,28 @@
 * Began with understanding the task, how to access the DOM and add code to it .
 
 Tasks List:
--[ ] search Vitamix site for libraries to use
--[ ] build out file structure - index.html, sass, react
--[ ] insert HTML into DOM using javascript
--[ ] create modal on timer  
-  - [ ] modal will pop up 3 seconds after landing on page
-  - [ ] get copy
+-[x] search Vitamix site for libraries to use: jQuery
+-[x] build out file structure - index.html, sass, react
+-[x] insert HTML into DOM using jQuery
+-[x] create modal on timer  
+  - [x] modal will pop up 3 seconds after landing on page
+  - [x] get copy
   - [ ] display one RANDOM item from shopping cart
-    - [ ] use cookies or local storage (window.) to gain access to the shopping cart
+    - [ ] use GET request to access html on cart page
     - [ ] The item’s name and picture will link back to the item’s PDP (product detail page).
     - [ ] The item’s name has a hover state, turning to the actionable blue and underlined.
     - [ ] If there are 2+ items, there will be a small line of text beneath the item saying “Showing 1 of X”. REVIEW - example
--[ ] There is a CTA button in the modal that reads “View Cart”. It will have a light blue hover state, consistent with all other blue buttons on Vitamix’s site.
--[ ] A user can close the modal by clicking anywhere outside of the modal or the ‘X’ in the modal’s top right corner.
--[ ]
+-[x] There is a CTA button in the modal that reads “View Cart”. It will have a light blue hover state, consistent with all other blue buttons on Vitamix’s site.
+-[x] A user can close the modal by clicking anywhere outside of the modal or the ‘X’ in the modal’s top right corner.
+
 
 Planning:
 [] When page loads / 3 sec timer starts
 [] If cart is empty / nothing happens
 [] If cart has at least one items / then modal launches
 [] If cart has one or more items / then load with special message
-[] when x is clicked / modal closes - no actions
-[] when CTA button is clicked / then cart page opens & modal closes
+[x] when x is clicked / modal closes - no actions
+[x] when CTA button is clicked / then cart page opens & modal closes
 [] when cart item pic or text clicked, / then opens to item page
 
 * Set up file system:
@@ -32,26 +32,38 @@ Planning:
   * created a local html file to use for the initial modal build
   * created separate CSS file, but will need to import it or write in the styling into the js
 
-Notes:
+Notes/Issues:
 * Began with creating a styling the modal. Copied colors from Vitamix.com.
 * Created Overlay- problem with creating a click handler to click on the overlay (ie, click anywhere but the modal except the modal's "x" close button) in order to close the modal.
   * Solved it with this code and added the addClass for the overlay to the "x" handler
-```  $("#overlay").on("click", function() {
-    $(".modal").addClass("hidden");
-    $("#overlay").addClass("hidden");
-  });```
+  ```$("#overlay").on("click", function() {
+        $(".modal").addClass("hidden");
+        $("#overlay").addClass("hidden");
+    });
+    ```
 
 * Primary issue: GETting the cart information from the home page of Vitamix. Tried running a GET request to both https://www.vitamix.com/ & https://www.vitamix.com/Shop/Shopping-Cart in order to see if JSON came back as a usable object. This didn't work.
   * First tried a couple localstorage and cookies methods to no avail.
   * Then tried different versions of GET requests from the home page: https://www.vitamix.com/
-    Was able to get back helpful data using:
+    Was able to retrieve helpful data using:
     ```$.ajax({
       type: "GET",
       dataType: "html",
       url: "https://www.vitamix.com/Shop/Shopping-Cart"
     }).then(function(data, status) {
       console.log(data);
-    });```
+    });
+    ```
+* Reviewing Data from Cart:
+  * EMPTY: the `<div class='l-full-width'><div>Your Cart is Empty</div></div>`
+  * Else:
+    * id=0-item-price
+    * li ... id="item0", "item1", etc, class="cart-item"
+
+* Importing CSS into JS file: issue
+  * First, had to figure out that the css needed to be called in an anonymous callback function.
+  * Ran into major problem trying to get the jquery addClass to work with the import. Once imported, the class "hidden" with properties, display: none did not work.
+  *
 
 
 ## Developer Candidate Homework

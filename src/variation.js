@@ -20,10 +20,20 @@ $.ajax({
 //color
 //number of items in cart
 //link to item's page
+var closeModal = function() {
+  console.log("close this thing");
+  $(function() {
+    $(".hidden").css({
+      display: "none"
+    });
+  });
+};
+
 function openModal() {
   $(function() {
     var docHeight = $(document).height();
     $("#overlay").on("click", function() {
+      return closeModal();
       $(".modal").addClass("hidden");
       $("#overlay").addClass("hidden");
     });
@@ -40,7 +50,7 @@ function openModal() {
 
   var $container = $("#container");
   var $modal = $(
-    "<div class='modal'><h4 class='close-modal-btn'>X</h4><div class='welcome'><h6 class='welcome-title'>Welcome Back!</h6><p class='welcome-message'>You left something in your cart. Check out today!</p></div><img class='image' src='https://www.vitamix.com//media/other/images/xascent-series-152x290.jpg.pagespeed.ic.LSCvQwTLVj.jpg'><div class='product-details'><h5 class='product-title'>7500</h5><h6 class='cart-qty'>Qty: 1</h6><h6 class='product-color'>Black</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
+    "<div class='modal hidden'><h4 class='close-modal-btn'>X</h4><div class='welcome'><h6 class='welcome-title'>Welcome Back!</h6><p class='welcome-message'>You left something in your cart. Check out today!</p></div><img class='image' src='https://www.vitamix.com//media/other/images/xascent-series-152x290.jpg.pagespeed.ic.LSCvQwTLVj.jpg'><div class='product-details'><h5 class='product-title'>7500</h5><h6 class='cart-qty'>Qty: 1</h6><h6 class='product-color'>Black</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
   );
   $(function() {
     $(".modal").css({
@@ -53,9 +63,9 @@ function openModal() {
       height: "450px"
       // 'border': '.1rem', 'solid' "#E1E1E1"
     });
-    $(".hidden").css({
-      display: "none"
-    });
+    // $(".hidden").css({
+    //   display: "none"
+    // });
     $(".close-modal-btn").css({
       margin: ".5rem",
       float: "right",
