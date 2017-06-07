@@ -11,8 +11,90 @@ body {
   top: 20%;
   width: 450px;
   height: 450px;
+  border: .1rem solid #E1E1E1;
 }
 
 .hidden {
   display: none;
+}
+.close-modal-btn {
+  margin: .5rem;
+  float: right;
+  color: #E1E1E1;
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+
+.close-modal-btn:hover {
+  cursor: pointer;
+}
+.welcome {
+  text-align: center;
+}
+.welcome-title {
+  color: #4B6985;
+  font-weight: 200;
+  font-size: 3.1rem;
+  font-family: "Sentinel A", "Sentinel B", Georgia, serif;
+  margin: 3rem auto 1rem;
+}
+
+.welcome-message {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #666666;
+  line-height: 1.5rem;
+}
+
+.image {
+  height: 130px;
+  margin-top: 2rem;
+  margin-left: 9rem;
+}
+.product-details {
+  float: right;
+  margin-right: 9rem;
+}
+.product-title {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: #4B6985;
+  margin: 3rem 0 .7rem 0;
+}
+.cart-qty {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
+  margin: 0;
+  color: #666666;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.product-color {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
+  margin: 0;
+  color: #666666;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+
+.cta-cart-button {
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin-top: 2.3rem;
+  font-family: "Sentinel A", "Sentinel B", Georgia, serif;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #4B6985;
+  color: #fff;
+  width: 13rem;
+  height: 3rem;
+}
+.cta-cart-button:hover {
+  background-color: #509de5;
 }
