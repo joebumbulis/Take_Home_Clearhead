@@ -1,5 +1,12 @@
 // Variation code goes here
 // require("../main.css");
+$.ajax({
+  type: "GET",
+  dataType: "html",
+  url: "https://www.vitamix.com/Shop/Shopping-Cart"
+}).then(function(data, status) {
+  console.log(data);
+});
 
 function openModal() {
   $(function() {
