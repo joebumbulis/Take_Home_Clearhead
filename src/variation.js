@@ -61,11 +61,7 @@ function openModal() {
       top: "20%",
       width: "450px",
       height: "450px"
-      // 'border': '.1rem', 'solid' "#E1E1E1"
     });
-    // $(".hidden").css({
-    //   display: "none"
-    // });
     $(".close-modal-btn").css({
       margin: ".5rem",
       float: "right",
@@ -77,18 +73,19 @@ function openModal() {
 
   var closeBtn = $modal.find(".close-modal-btn");
   var ctaBtn = $modal.find(".cta-cart-button");
-  $("#overlay").on("click", function() {
-    $(".modal").addClass("hidden");
-    $("#overlay").remove();
-  });
+  // $("#overlay").on("click", function() {
+  //   $(".modal").addClass("hidden");
+  //   $("#overlay").remove();
+  // });
   closeBtn.on("click", function() {
+    return closeModal();
     $(".modal").addClass("hidden");
     $("#overlay").addClass("hidden");
   });
   ctaBtn.on("click", function() {
     window.location.href = "https://www.vitamix.com/Shop/Shopping-Cart";
   });
-  $("body").append("<div id='overlay'></div>");
+  $("body").append("<div id='overlay' class='hidden'></div>");
   $container.append($modal);
 }
 

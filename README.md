@@ -63,7 +63,7 @@ Notes/Issues:
 * Importing CSS into JS file: issue
   * First, had to figure out that the css needed to be called in an anonymous callback function.
   * Ran into major problem trying to get the jquery addClass to work with the import. Once imported, the class "hidden" with properties, display: none did not work.
-  *
+  * FIX: instead of using addClass to add "hidden", using the event handlers on the "x" button as well as the overlay to call a function closeModal that makes active the hidden class with a property of none. 
 
 
 ## Developer Candidate Homework
