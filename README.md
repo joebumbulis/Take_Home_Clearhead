@@ -74,6 +74,17 @@
   * FIX: instead of using addClass to add "hidden", using the event handlers on the "x" button as well as the overlay to call a function closeModal that makes active the hidden class with a property of none.
   * Imported all the CSS from the main.css file into the variation.js using jquery.css()
   * Lost hover state: working to correct this issue using functions that call hover().css()
+  * Was able to fix the hover state using .hover() method in jQuery (for the product title and cta button in the modal):
+  ```$(".product-title").hover(
+    function() {
+      $(this).css("color", "#509de5");
+      $(this).css("text-decoration", "underline");
+    },
+    function() {
+      $(this).css("color", "#4B6985");
+    }
+  );
+  ```
 
 * Discovered after importing all of css into variation.js, that the code no longer works in the console of Vitamix.com
 
