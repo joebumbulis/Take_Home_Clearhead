@@ -14,6 +14,8 @@
     - [ ] If there are 2+ items, there will be a small line of text beneath the item saying “Showing 1 of X”. REVIEW - example
 -[x] There is a CTA button in the modal that reads “View Cart”. It will have a light blue hover state, consistent with all other blue buttons on Vitamix’s site.
 -[x] A user can close the modal by clicking anywhere outside of the modal or the ‘X’ in the modal’s top right corner.
+-[ ] Refactor the css into cleaner function
+-[ ] make the variation.js more modular- import actions & styling 
 
 
 ## Planning:
@@ -64,7 +66,10 @@
   * First, had to figure out that the css needed to be called in an anonymous callback function.
   * Ran into major problem trying to get the jquery addClass to work with the import. Once imported, the class "hidden" with properties, display: none did not work.
   * FIX: instead of using addClass to add "hidden", using the event handlers on the "x" button as well as the overlay to call a function closeModal that makes active the hidden class with a property of none.
+  * Imported all the CSS from the main.css file into the variation.js using jquery.css()
 
+
+* Modal research: need to play with jQuery's dialog to see if it would be a better use case
 
 ## Developer Candidate Homework
 

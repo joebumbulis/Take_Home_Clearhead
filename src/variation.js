@@ -56,7 +56,7 @@ function openModal() {
       "z-index": "1000",
       "background-color": "#fff",
       position: "absolute",
-      left: "20%",
+      left: "30%",
       top: "20%",
       width: "450px",
       height: "450px"
