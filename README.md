@@ -80,9 +80,9 @@
 
 * Git Issues:
     * I downloaded instead of cloned the homework repo, thus when I pushed and created a pulled request I received an error:
-    ```There isn’t anything to compare.
-master and joe_variation are entirely different commit histories.
-  ```
+    _There isn’t anything to compare.
+master and joe_variation are entirely different commit histories._
+
   * By downloading the repo and not cloning it, the two repo's have completely separate commit histories, this there is nothing to compare.
   * FIX:
 
