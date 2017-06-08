@@ -87,6 +87,12 @@
   ```
 
 * Discovered after importing all of css into variation.js, that the code no longer works in the console of Vitamix.com
+  * Clicked through elements in the console, found that the modal I created was present.
+  * deleted the `".hidden"` class from the modal and it appeared.
+  * Tried deleted and cleaning up functions in my code, but this did not work for making the modal appear.
+  * Realized that Vitamix may also be using a class name: `".hidden"` and it would override my own.
+  * FIX: Changed my code `".hidden"` to "hide-modal" for use on both the modal and overlay.
+
 
 
 * Git Issues:
