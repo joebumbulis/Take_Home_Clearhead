@@ -6,10 +6,16 @@ $.ajax({
 }).then(function(data, status) {
   var $cartPage = $(data);
   var $cartItems = $cartPage.find(".cart__item");
+  console.log($cartItems);
+
   var $randomItem = $cartItems[Math.floor(Math.random() * $cartItems.length)];
   var $randomItemImage = $($randomItem).find(".cart__item__image").html();
-  var $randomItemBody = $($randomItem).find(".cart__item__body");
   var $randomItemTitle = $($randomItem).find(".cart__item__name").html();
+  var $randomItemQty = $($randomItem).find(".cart__item__count").html();
+  // if (Number.isNaN($randomItemQty){
+  //   $randomItemQty = 1;
+  // })
+  var $randomItemColor = $($randomItem).find(".cart__item__count").html();
 
   if ($cartItems.length > 0) {
     setTimeout(openModal, 3000);
@@ -18,7 +24,7 @@ $.ajax({
   //   .find(".cart__item__subtotal")
   //   .text();
   // var randomItemPrice = /* clean up raw text */;
-  console.log($randomItem, $randomItemTitle);
+  console.log($randomItem, $randomItemQty);
 
   //use jQuery to grab info from data to populate the modal with:
   //title
@@ -54,7 +60,9 @@ $.ajax({
         $randomItemImage +
         "</span><div class='product-details'><h5 class='product-title'>" +
         $randomItemTitle +
-        "</h5><h6 class='cart-qty'>Qty: 1</h6><h6 class='product-color'>Black</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
+        "</h5><h6 class='cart-qty'>Qty:" +
+        $randomItemQty +
+        "</h6><h6 class='product-color'>Black</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
     );
     $(function() {
       $(".modal").css({
@@ -100,12 +108,12 @@ $.ajax({
         float: "left",
         // display: "inline-block",
         "margin-top": "2rem",
-        "margin-left": "9rem",
+        "margin-left": "3rem",
         cursor: "pointer"
       });
       $(".product-details").css({
         float: "right",
-        "margin-right": "9rem"
+        "margin-right": "3rem"
       });
       $(".product-title").css({
         "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
