@@ -100,36 +100,58 @@ function openModal() {
       float: "right",
       "margin-right": "9rem"
     });
-    .product-title {
-      font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
-      font-size: 1.5rem;
-      color: #4B6985;
-      margin: 3rem 0 .7rem 0;
-      cursor: pointer;
-
-    }
-    .product-title:hover {
-      text-decoration: underline;
-      color: #509de5;
-    }
-
-    .cart-qty {
-      font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
-      margin: 0;
-      color: #666666;
-      line-height: 1.5rem;
-      font-size: 1rem;
-      font-weight: 300;
-    }
-    .product-color {
-      font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
-      margin: 0;
-      color: #666666;
-      line-height: 1.5rem;
-      font-size: 1rem;
-      font-weight: 300;
-    }
-
+    $(".product-title").css({
+      "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
+      "font-size": "1.5rem",
+      color: "#4B6985",
+      margin: "3rem 0 .7rem 0",
+      cursor: "pointer"
+    }), $(".product-title:hover").css({
+      "text-decoration": "underline",
+      color: "#509de5"
+    });
+    $(".cart-qty").css({
+      "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
+      margin: "0",
+      color: "#666666",
+      "line-height": "1.5rem",
+      "font-size": "1rem",
+      "font-weight": "300"
+    });
+    $(".product-color").css({
+      "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
+      margin: "0",
+      color: "#666666",
+      "line-height": "1.5rem",
+      "font-size": "1rem",
+      "font-weight": "300"
+    });
+    $(".multiple-items-message").css({
+      "text-align": "center",
+      "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
+      margin: ".5rem",
+      color: "#E1E1E1",
+      "line-height": "1.5rem",
+      "font-size": "1rem",
+      "font-weight": "300"
+    });
+    $(".cta-cart-button").css({
+      "text-align": "center",
+      margin: "auto",
+      display: "block",
+      "margin-top": "1rem",
+      "font-family": "Sentinel A, Sentinel B, Georgia, serif",
+      "font-size": "1.2rem",
+      border: "none",
+      "background-color": "#4B6985",
+      color: "#fff",
+      width: "13rem",
+      height: "3rem",
+      cursor: "pointer"
+    });
+    $(".cta-cart-button:hover").css({
+      "background-color": "#509de5"
+    });
   });
 
   var closeBtn = $modal.find(".close-modal-btn");

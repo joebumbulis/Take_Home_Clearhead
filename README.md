@@ -1,6 +1,6 @@
 * Began with understanding the task, how to access the DOM and add code to it .
 
-Tasks List:
+## Tasks List:
 -[x] search Vitamix site for libraries to use: jQuery
 -[x] build out file structure - index.html, sass, react
 -[x] insert HTML into DOM using jQuery
@@ -16,8 +16,8 @@ Tasks List:
 -[x] A user can close the modal by clicking anywhere outside of the modal or the ‘X’ in the modal’s top right corner.
 
 
-Planning:
-[] When page loads / 3 sec timer starts
+## Planning:
+[] When page loads / 3 sec timer starts IF there is something in cart
 [] If cart is empty / nothing happens
 [] If cart has at least one items / then modal launches
 [] If cart has one or more items / then load with special message
@@ -25,14 +25,14 @@ Planning:
 [x] when CTA button is clicked / then cart page opens & modal closes
 [] when cart item pic or text clicked, / then opens to item page
 
-* Set up file system:
+## Set up file system:
   * Unclear about file structure approach- created index.html and main.css; but emailed Case about clarity around using React.js
     * No react, build in the actual DOM/ create experimental page.
   * emailed Case about clarity about how much build out does the landing page need in the comp v1.
   * created a local html file to use for the initial modal build
   * created separate CSS file, but will need to import it or write in the styling into the js
 
-Notes/Issues:
+## Notes/Issues:
 * Began with creating a styling the modal. Copied colors from Vitamix.com.
 * Created Overlay- problem with creating a click handler to click on the overlay (ie, click anywhere but the modal except the modal's "x" close button) in order to close the modal.
   * Solved it with this code and added the addClass for the overlay to the "x" handler
@@ -63,7 +63,7 @@ Notes/Issues:
 * Importing CSS into JS file: issue
   * First, had to figure out that the css needed to be called in an anonymous callback function.
   * Ran into major problem trying to get the jquery addClass to work with the import. Once imported, the class "hidden" with properties, display: none did not work.
-  * FIX: instead of using addClass to add "hidden", using the event handlers on the "x" button as well as the overlay to call a function closeModal that makes active the hidden class with a property of none. 
+  * FIX: instead of using addClass to add "hidden", using the event handlers on the "x" button as well as the overlay to call a function closeModal that makes active the hidden class with a property of none.
 
 
 ## Developer Candidate Homework
