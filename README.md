@@ -42,6 +42,7 @@
 
 ## Notes/Issues:
 * Began with creating a styling the modal. Copied colors from Vitamix.com.
+
 * Created Overlay- problem with creating a click handler to click on the overlay (ie, click anywhere but the modal except the modal's "x" close button) in order to close the modal.
   * Solved it with this code and added the addClass for the overlay to the "x" handler
   ```$("#overlay").on("click", function() {
@@ -51,7 +52,7 @@
     ```
 
 * Primary issue: GETting the cart information from the home page of Vitamix. Tried running a GET request to both https://www.vitamix.com/ & https://www.vitamix.com/Shop/Shopping-Cart in order to see if JSON came back as a usable object. This didn't work.
-  * First tried a couple localstorage and cookies methods to no avail.
+  * First tried a couple localstorage and cookies methods to no avail, but the get hint became even more obvious in Case's email when he said I could GET the info.
   * Then tried different versions of GET requests from the home page: https://www.vitamix.com/
     Was able to retrieve helpful data using:
     ```$.ajax({
@@ -86,7 +87,7 @@
   );
   ```
 
-* Discovered after importing all of css into variation.js, that the code no longer works in the console of Vitamix.com
+- [x ] Discovered after importing all of css into variation.js, that the code no longer works in the console of Vitamix.com
   * Clicked through elements in the console, found that the modal I created was present.
   * deleted the `".hidden"` class from the modal and it appeared.
   * Tried deleted and cleaning up functions in my code, but this did not work for making the modal appear.

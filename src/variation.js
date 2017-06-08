@@ -4,13 +4,20 @@ $.ajax({
   dataType: "html",
   url: "https://www.vitamix.com/Shop/Shopping-Cart"
 }).then(function(data, status) {
-  setTimeout(openModal, 3000);
+  var $cartPage = $(data);
+  var $cartItems = $cartPage.find(".cart__item");
+  if ($cartItems.length > 0) {
+    setTimeout(openModal, 3000);
+    console.log("stuff in cart");
+  }
   //check data in cart
   //if the cart is empty then do nothing
   //otherwise launch timer for openModal
   // console.log(data);
   $(data).find("#item0");
-  console.log($(data).find("#item0"));
+  $(data).find(".l-full-width");
+
+  console.log($cartItems);
 });
 
 //use jQuery to grab info from data to populate the modal with:
@@ -168,8 +175,7 @@ function openModal() {
   });
   $("body").append("<div id='overlay' class='hide-modal'></div>");
   $container.append($modal);
-  console.log("made it through", $container);
 }
 
 //used for calling the timer function when testing locally:
-setTimeout(openModal, 3000);
+// setTimeout(openModal, 3000);
