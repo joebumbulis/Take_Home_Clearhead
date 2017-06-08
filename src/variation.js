@@ -8,6 +8,8 @@ $.ajax({
   var $cartItems = $cartPage.find(".cart__item");
   var $randomItem = $cartItems[Math.floor(Math.random() * $cartItems.length)];
   var $randomItemImage = $($randomItem).find(".cart__item__image").html();
+  var $randomItemBody = $($randomItem).find(".cart__item__body");
+  var $randomItemTitle = $($randomItem).find(".cart__item__name").html();
 
   if ($cartItems.length > 0) {
     setTimeout(openModal, 3000);
@@ -16,10 +18,9 @@ $.ajax({
   //   .find(".cart__item__subtotal")
   //   .text();
   // var randomItemPrice = /* clean up raw text */;
-  console.log($randomItemImage);
+  console.log($randomItem, $randomItemTitle);
 
   //use jQuery to grab info from data to populate the modal with:
-  //picture of item
   //title
   //Qty
   //color
@@ -49,9 +50,11 @@ $.ajax({
 
     var $container = $("#container");
     var $modal = $(
-      "<div class='modal hide-modal'><h4 class='close-modal-btn'>X</h4><div class='welcome'><h6 class='welcome-title'>Welcome Back!</h6><p class='welcome-message'>You left something in your cart. Check out today!</p></div><div class='image'>" +
+      "<div class='modal hide-modal'><h4 class='close-modal-btn'>X</h4><div class='welcome'><h6 class='welcome-title'>Welcome Back!</h6><p class='welcome-message'>You left something in your cart. Check out today!</p></div><span class='image'>" +
         $randomItemImage +
-        "</div><div class='product-details'><h5 class='product-title'>7500</h5><h6 class='cart-qty'>Qty: 1</h6><h6 class='product-color'>Black</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
+        "</span><div class='product-details'><h5 class='product-title'>" +
+        $randomItemTitle +
+        "</h5><h6 class='cart-qty'>Qty: 1</h6><h6 class='product-color'>Black</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
     );
     $(function() {
       $(".modal").css({
@@ -93,7 +96,9 @@ $.ajax({
         "line-height": "1.5rem"
       });
       $(".image").css({
-        height: "130px",
+        // height: "130px",
+        float: "left",
+        // display: "inline-block",
         "margin-top": "2rem",
         "margin-left": "9rem",
         cursor: "pointer"
@@ -109,7 +114,6 @@ $.ajax({
         margin: "3rem 0 .7rem 0",
         cursor: "pointer"
       }), $(".product-title").hover(
-        // }); //   color: "#509de5" //   "text-decoration": "underline", // $(".product-title:hover").css({
         function() {
           $(this).css("color", "#509de5");
           $(this).css("text-decoration", "underline");
