@@ -169,4 +169,5 @@ function openModal() {
   $container.append($modal);
 }
 
-setTimeout(openModal, 3000);
+//used for calling the timer function when testing locally:
+// setTimeout(openModal, 3000);
