@@ -1,16 +1,16 @@
 // Variation code goes here
-// require("../main.css");
 $.ajax({
   type: "GET",
   dataType: "html",
   url: "https://www.vitamix.com/Shop/Shopping-Cart"
 }).then(function(data, status) {
   setTimeout(openModal, 3000);
-
   //check data in cart
   //if the cart is empty then do nothing
   //otherwise launch timer for openModal
-  console.log(data);
+  // console.log(data);
+  $(data).find("#item0");
+  console.log($(data).find("#item0"));
 });
 
 //use jQuery to grab info from data to populate the modal with:
@@ -21,7 +21,6 @@ $.ajax({
 //number of items in cart
 //link to item's page
 var closeModal = function() {
-  console.log("close this thing");
   $(function() {
     $(".hidden").css({
       display: "none"
@@ -69,14 +68,73 @@ function openModal() {
       "font-size": "1.4rem",
       "font-weight": "100"
     });
+    $(".close-modal-btn:hover").css({
+      cursor: "pointer"
+    });
+    $(".welcome").css({
+      "text-align": "center"
+    });
+    $(".welcome-title").css({
+      color: "#4B6985",
+      "font-weight": "200",
+      "font-size": "3.1rem",
+      "font-family": "Sentinel A, Sentinel B, Georgia, serif",
+      margin: "3rem auto 1rem"
+    });
+    $(".welcome-message").css({
+      "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
+      width: "70%",
+      margin: "0 auto",
+      "font-size": "1.3rem",
+      "font-weight": "300",
+      color: "#666666",
+      "line-height": "1.5rem"
+    });
+    $(".image").css({
+      height: "130px",
+      "margin-top": "2rem",
+      "margin-left": "9rem",
+      cursor: "pointer"
+    });
+    $(".product-details").css({
+      float: "right",
+      "margin-right": "9rem"
+    });
+    .product-title {
+      font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
+      font-size: 1.5rem;
+      color: #4B6985;
+      margin: 3rem 0 .7rem 0;
+      cursor: pointer;
+
+    }
+    .product-title:hover {
+      text-decoration: underline;
+      color: #509de5;
+    }
+
+    .cart-qty {
+      font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
+      margin: 0;
+      color: #666666;
+      line-height: 1.5rem;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    .product-color {
+      font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
+      margin: 0;
+      color: #666666;
+      line-height: 1.5rem;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
   });
 
   var closeBtn = $modal.find(".close-modal-btn");
   var ctaBtn = $modal.find(".cta-cart-button");
-  // $("#overlay").on("click", function() {
-  //   $(".modal").addClass("hidden");
-  //   $("#overlay").remove();
-  // });
+
   closeBtn.on("click", function() {
     return closeModal();
     $(".modal").addClass("hidden");

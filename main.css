@@ -25,7 +25,7 @@ body {
   font-weight: 100;
 }*/
 
-.close-modal-btn:hover {
+/*.close-modal-btn:hover {
   cursor: pointer;
 }
 .welcome {
@@ -37,9 +37,9 @@ body {
   font-size: 3.1rem;
   font-family: "Sentinel A", "Sentinel B", Georgia, serif;
   margin: 3rem auto 1rem;
-}
+}*/
 
-.welcome-message {
+/*.welcome-message {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
   width: 70%;
   margin: 0 auto;
@@ -59,8 +59,8 @@ body {
 .product-details {
   float: right;
   margin-right: 9rem;
-}
-.product-title {
+}*/
+/*.product-title {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, sans-serif;
   font-size: 1.5rem;
   color: #4B6985;
@@ -88,7 +88,7 @@ body {
   line-height: 1.5rem;
   font-size: 1rem;
   font-weight: 300;
-}
+}*/
 
 .multiple-items-message {
   text-align: center;
