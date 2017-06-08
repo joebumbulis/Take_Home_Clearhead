@@ -4,7 +4,7 @@ $.ajax({
   dataType: "html",
   url: "https://www.vitamix.com/Shop/Shopping-Cart"
 }).then(function(data, status) {
-  return setTimeout(openModal, 3000);
+  setTimeout(openModal, 3000);
   //check data in cart
   //if the cart is empty then do nothing
   //otherwise launch timer for openModal
@@ -28,24 +28,11 @@ var closeModal = function() {
   });
 };
 
-$(document).ready(function() {
-  $(".cta-cart-button").hover(
-    function() {
-      $(this).css(("background-color", "#509de5"));
-    },
-    function() {
-      $(this).css("background-color", "#4B6985");
-    }
-  );
-});
-
 function openModal() {
   $(function() {
     var docHeight = $(document).height();
     $("#overlay").on("click", function() {
       return closeModal();
-      $(".modal").addClass("hidden");
-      $("#overlay").addClass("hidden");
     });
     $("#overlay").height(docHeight).css({
       opacity: 0.4,
@@ -117,10 +104,17 @@ function openModal() {
       color: "#4B6985",
       margin: "3rem 0 .7rem 0",
       cursor: "pointer"
-    }), $(".product-title:hover").css({
-      "text-decoration": "underline",
-      color: "#509de5"
-    });
+    }), //   color: "#509de5" //   "text-decoration": "underline", // $(".product-title:hover").css({
+    // });
+    $(".product-title").hover(
+      function() {
+        $(this).css("color", "#509de5");
+        $(this).css("text-decoration", "underline");
+      },
+      function() {
+        $(this).css("color", "#4B6985");
+      }
+    );
     $(".cart-qty").css({
       "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
       margin: "0",
@@ -162,27 +156,25 @@ function openModal() {
     });
     $(".cta-cart-button").hover(
       function() {
-        $(this).css(("background-color", "#509de5"));
+        $(this).css("background-color", "#509de5");
       },
       function() {
         $(this).css("background-color", "#4B6985");
       }
     );
   });
-
   var closeBtn = $modal.find(".close-modal-btn");
   var ctaBtn = $modal.find(".cta-cart-button");
 
   closeBtn.on("click", function() {
     return closeModal();
-    $(".modal").addClass("hidden");
-    $("#overlay").addClass("hidden");
   });
   ctaBtn.on("click", function() {
     window.location.href = "https://www.vitamix.com/Shop/Shopping-Cart";
   });
   $("body").append("<div id='overlay' class='hidden'></div>");
   $container.append($modal);
+  console.log("made it through");
 }
 
 //used for calling the timer function when testing locally:
