@@ -1,31 +1,37 @@
-* Began with understanding the task, how to access the DOM and add code to it .
+* Began with understanding the task, how to access the DOM and add code to it. Needed quick review of jQuery.
+* Completely new tasks:
+  * injecting code into DOM in console.
+  * GET request html from another page to both traverse it and use it to populate another page.
+  * Writing CSS into jQuery/JavaScriptfile
+  * creating an event handler for the overlay so on click on screen outside modals closes modal
+
 
 ## Tasks List:
--[x] search Vitamix site for libraries to use: jQuery
--[x] build out file structure - index.html, sass, react
--[x] insert HTML into DOM using jQuery
--[x] create modal on timer  
+- [x] search Vitamix site for libraries to use: jQuery
+- [x] build out file structure - index.html, sass, react
+- [x] insert HTML into DOM using jQuery
+- [x] create modal on timer  
   - [x] modal will pop up 3 seconds after landing on page
   - [x] get copy
   - [ ] display one RANDOM item from shopping cart
-    - [ ] use GET request to access html on cart page
+    - [x] use GET request to access html on cart page
     - [ ] The item’s name and picture will link back to the item’s PDP (product detail page).
     - [ ] The item’s name has a hover state, turning to the actionable blue and underlined.
     - [ ] If there are 2+ items, there will be a small line of text beneath the item saying “Showing 1 of X”. REVIEW - example
--[x] There is a CTA button in the modal that reads “View Cart”. It will have a light blue hover state, consistent with all other blue buttons on Vitamix’s site.
--[x] A user can close the modal by clicking anywhere outside of the modal or the ‘X’ in the modal’s top right corner.
--[ ] Refactor the css into cleaner function
--[ ] make the variation.js more modular- import actions & styling 
+- [x] There is a CTA button in the modal that reads “View Cart”. It will have a light blue hover state, consistent with all other blue buttons on Vitamix’s site.
+- [x] A user can close the modal by clicking anywhere outside of the modal or the ‘X’ in the modal’s top right corner.
+- [ ] Refactor the css into cleaner function
+- [ ] make the variation.js more modular- import actions & styling
 
 
 ## Planning:
-[] When page loads / 3 sec timer starts IF there is something in cart
-[] If cart is empty / nothing happens
-[] If cart has at least one items / then modal launches
-[] If cart has one or more items / then load with special message
-[x] when x is clicked / modal closes - no actions
-[x] when CTA button is clicked / then cart page opens & modal closes
-[] when cart item pic or text clicked, / then opens to item page
+- [] When page loads / 3 sec timer starts IF there is something in cart
+- [] If cart is empty / nothing happens
+- [] If cart has at least one items / then modal launches
+- [] If cart has one or more items / then load with special message
+- [x] when x is clicked / modal closes - no actions
+- [x] when CTA button is clicked / then cart page opens & modal closes
+- [] when cart item pic or text clicked, / then opens to item page
 
 ## Set up file system:
   * Unclear about file structure approach- created index.html and main.css; but emailed Case about clarity around using React.js
@@ -67,7 +73,18 @@
   * Ran into major problem trying to get the jquery addClass to work with the import. Once imported, the class "hidden" with properties, display: none did not work.
   * FIX: instead of using addClass to add "hidden", using the event handlers on the "x" button as well as the overlay to call a function closeModal that makes active the hidden class with a property of none.
   * Imported all the CSS from the main.css file into the variation.js using jquery.css()
+  * Lost hover state: working to correct this issue using functions that call hover().css()
 
+* Discovered after importing all of css into variation.js, that the code no longer works in the console of Vitamix.com
+
+
+* Git Issues:
+    * I downloaded instead of cloned the homework repo, thus when I pushed and created a pulled request I received an error:
+    ```There isn’t anything to compare.
+master and joe_variation are entirely different commit histories.
+  ```
+  * By downloading the repo and not cloning it, the two repo's have completely separate commit histories, this there is nothing to compare.
+  * FIX:
 
 * Modal research: need to play with jQuery's dialog to see if it would be a better use case
 

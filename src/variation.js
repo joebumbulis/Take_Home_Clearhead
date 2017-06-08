@@ -4,7 +4,7 @@ $.ajax({
   dataType: "html",
   url: "https://www.vitamix.com/Shop/Shopping-Cart"
 }).then(function(data, status) {
-  setTimeout(openModal, 3000);
+  return setTimeout(openModal, 3000);
   //check data in cart
   //if the cart is empty then do nothing
   //otherwise launch timer for openModal
@@ -27,6 +27,17 @@ var closeModal = function() {
     });
   });
 };
+
+$(document).ready(function() {
+  $(".cta-cart-button").hover(
+    function() {
+      $(this).css(("background-color", "#509de5"));
+    },
+    function() {
+      $(this).css("background-color", "#4B6985");
+    }
+  );
+});
 
 function openModal() {
   $(function() {
@@ -149,9 +160,14 @@ function openModal() {
       height: "3rem",
       cursor: "pointer"
     });
-    $(".cta-cart-button:hover").css({
-      "background-color": "#509de5"
-    });
+    $(".cta-cart-button").hover(
+      function() {
+        $(this).css(("background-color", "#509de5"));
+      },
+      function() {
+        $(this).css("background-color", "#4B6985");
+      }
+    );
   });
 
   var closeBtn = $modal.find(".close-modal-btn");
@@ -170,4 +186,4 @@ function openModal() {
 }
 
 //used for calling the timer function when testing locally:
-// setTimeout(openModal, 3000);
+setTimeout(openModal, 3000);
