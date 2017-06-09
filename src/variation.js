@@ -11,12 +11,12 @@ $.ajax({
   var $randomItemTitle = $($randomItem).find(".cart__item__name").html();
   var $randomItemQty = $($randomItem).find(".cart__item__count").html();
   var $randomItemColor = $($randomItem).find(".swatch__radio-label").html();
-
+  var $cartTotal = $cartItems.length;
   if ($cartItems.length > 0) {
     setTimeout(openModal, 3000);
   }
 
-  console.log($randomItem);
+  console.log($cartItems);
 
   var closeModal = function(e) {
     e.preventDefault;
@@ -33,8 +33,12 @@ $.ajax({
     }
   };
 
-  var testFun = function() {
-    return "HOWDY!";
+  var cartTotal = function() {
+    if ($cartTotal > 1) {
+      return "Showing 1 of " + $cartTotal + "";
+    } else {
+      return "";
+    }
   };
 
   function openModal() {
@@ -62,7 +66,9 @@ $.ajax({
         testQty() +
         "</h6><h6 class='product-color'>" +
         $randomItemColor +
-        "</h6></div></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
+        "</h6></div></div><h6 class='multiple-items-message'>" +
+        cartTotal() +
+        "</h6><button class='cta-cart-button'>View Cart</button></div>"
     );
     $(function() {
       $(".modal").css({
@@ -116,7 +122,7 @@ $.ajax({
       });
       $(".product-details").css({
         float: "right",
-        margin: "0 3rem 0 1rem"
+        margin: "2rem 3rem 0 1rem"
       });
       $(".product-title").css({
         "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
@@ -131,6 +137,7 @@ $.ajax({
         },
         function() {
           $(this).css("color", "#4B6985");
+          $(this).css("text-decoration", "none");
         }
       );
       $(".cart-qty").css({
