@@ -13,11 +13,11 @@
 - [x] create modal on timer  
   - [x] modal will pop up 3 seconds after landing on page
   - [x] get copy
-  - [ ] display one RANDOM item from shopping cart
+  - [x] display one RANDOM item from shopping cart
     - [x] use GET request to access html on cart page
-    - [ ] The item’s name and picture will link back to the item’s PDP (product detail page).
-    - [ ] The item’s name has a hover state, turning to the actionable blue and underlined.
-    - [ ] If there are 2+ items, there will be a small line of text beneath the item saying “Showing 1 of X”. REVIEW - example
+    - [x] The item’s name and picture will link back to the item’s PDP (product detail page).
+    - [x] The item’s name has a hover state, turning to the actionable blue and underlined.
+    - [x] If there are 2+ items, there will be a small line of text beneath the item saying “Showing 1 of X”. REVIEW - example
 - [x] There is a CTA button in the modal that reads “View Cart”. It will have a light blue hover state, consistent with all other blue buttons on Vitamix’s site.
 - [x] A user can close the modal by clicking anywhere outside of the modal or the ‘X’ in the modal’s top right corner.
 - [ ] Refactor the css into cleaner function
@@ -25,13 +25,13 @@
 
 
 ## Planning:
-- [] When page loads / 3 sec timer starts IF there is something in cart
-- [] If cart is empty / nothing happens
-- [] If cart has at least one items / then modal launches
-- [] If cart has one or more items / then load with special message
+- [x] When page loads / 3 sec timer starts IF there is something in cart
+- [x] If cart is empty / nothing happens
+- [x] If cart has at least one items / then modal launches
+- [x] If cart has one or more items / then load with special message
 - [x] when x is clicked / modal closes - no actions
 - [x] when CTA button is clicked / then cart page opens & modal closes
-- [] when cart item pic or text clicked, / then opens to item page
+- [x] when cart item pic or text clicked, / then opens to item page
 
 ## Set up file system:
   * Unclear about file structure approach- created index.html and main.css; but emailed Case about clarity around using React.js
@@ -138,7 +138,7 @@ master and joe_variation are entirely different commit histories._
 
 * Modal research: need to play with jQuery's dialog to see if it would be a better use case
 
-* One possible bug: the overlay does pop up consistently with the modal. It does seem to work when the page first opens, which would be all use cases for users. 
+* One possible bug: the overlay does pop up consistently with the modal. It does seem to work when the page first opens, which would be all use cases for users.
 
 ## Developer Candidate Homework
 
