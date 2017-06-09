@@ -41,20 +41,6 @@ $.ajax({
   };
 
   function openModal() {
-    $(function() {
-      var docHeight = $(document).height();
-      $("#overlay").on("click", closeModal);
-      $("#overlay").height(docHeight).css({
-        opacity: 0.4,
-        position: "absolute",
-        top: 0,
-        left: 0,
-        "background-color": "black",
-        width: "100%",
-        "z-index": 500
-      });
-    });
-
     var $container = $("#container");
     var $modal = $(
       "<div class='modal hide-modal'><h4 class='close-modal-btn'>X</h4><div class='welcome'><h6 class='welcome-title'>Welcome Back!</h6><p class='welcome-message'>You left something in your cart. Check out today!</p></div><div class='product-container'><span class='image'>" +
@@ -70,6 +56,17 @@ $.ajax({
         "</h6><button class='cta-cart-button'>View Cart</button></div>"
     );
     $(function() {
+      var docHeight = $(document).height();
+      $("#overlay").on("click", closeModal);
+      $("#overlay").height(docHeight).css({
+        opacity: 0.4,
+        position: "absolute",
+        top: 0,
+        left: 0,
+        "background-color": "black",
+        width: "100%",
+        "z-index": 500
+      });
       $(".modal").css({
         "z-index": "1000",
         "background-color": "#fff",

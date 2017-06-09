@@ -64,10 +64,42 @@
     });
     ```
 * Reviewing Data from Cart:
+  * Notes for thinking through where to .find()
   * EMPTY: the `<div class='l-full-width'><div>Your Cart is Empty</div></div>`
   * Else:
     * id=0-item-price
     * li ... id="item0", "item1", etc, class="cart-item"
+  * Was able to get everything I needed from the cart with this code (obtained from Case's hint)
+  `var $cartPage = $(data);
+  var $cartItems = $cartPage.find(".cart__item");`
+  * Getting random item code:
+    `  var $randomItem = $cartItems[Math.floor(Math.random() * $cartItems.length)];`
+  * Able to obtain the image, title, and color straightforward with code like:
+  `var $randomItemImage = $($randomItem).find(".cart__item__image").html();`
+      * Placed `$randomItemImage` inside the modal string
+  * Hit a challenge when needed to create the quantity. When the quantity of an item was 2 or more, than the number appeared and was simple to place in the string.
+    * BUT, when the quantity was 1 (which would likely be most users' stories), then a long string of html elements was returned.
+    * instead of a var like above, used a function to return the correct quantity:
+    ```var testQty = function() {
+      if (Number($randomItemQty) >= 2) {
+        return $randomItemQty;
+      } else {
+        return 1;
+      }
+    };
+    ```
+    * Did something similar with special message that pops up if the cart has 2 or more items:
+    first created the var with this line: `  var $cartTotal = $cartItems.length;`
+    then made this function which is called in the string in the modal.
+    ```var cartTotal = function() {
+      if ($cartTotal > 1) {
+        return "Showing 1 of " + $cartTotal + "";
+      } else {
+        return "";
+      }
+    };
+    ```
+
 
 * Importing CSS into JS file: issue
   * First, had to figure out that the css needed to be called in an anonymous callback function.
@@ -102,9 +134,11 @@
 master and joe_variation are entirely different commit histories._
 
   * By downloading the repo and not cloning it, the two repo's have completely separate commit histories, this there is nothing to compare.
-  * FIX:
+  * FIX: Had a decent idea for a fix, but did not want to risk losing my commit history as the commit history was likely an essential metric for reviewing the work. Also, Case said not to worry about it since I was able to push the code and was viewable without a pull request.
 
 * Modal research: need to play with jQuery's dialog to see if it would be a better use case
+
+* One possible bug: the overlay does pop up consistently with the modal. It does seem to work when the page first opens, which would be all use cases for users. 
 
 ## Developer Candidate Homework
 
