@@ -102,7 +102,7 @@
 
 
 * Importing CSS into JS file: issue
-  * First, had to figure out that the css needed to be called in an anonymous callback function.
+  * First, had to figure out that the css needed to be called in an anonymous callback function. This was the first time I had needed to use jQuery .css() in order to get css instead od having a styles file. 
   * Ran into major problem trying to get the jquery addClass to work with the import. Once imported, the class "hidden" with properties, display: none did not work.
   * FIX: instead of using addClass to add "hidden", using the event handlers on the "x" button as well as the overlay to call a function closeModal that makes active the hidden class with a property of none.
   * Imported all the CSS from the main.css file into the variation.js using jquery.css()
