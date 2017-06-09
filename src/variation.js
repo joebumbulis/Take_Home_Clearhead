@@ -12,9 +12,6 @@ $.ajax({
   var $randomItemImage = $($randomItem).find(".cart__item__image").html();
   var $randomItemTitle = $($randomItem).find(".cart__item__name").html();
   var $randomItemQty = $($randomItem).find(".cart__item__count").html();
-  // if (Number.isNaN($randomItemQty){
-  //   $randomItemQty = 1;
-  // })
   var $randomItemColor = $($randomItem).find(".cart__item__count").html();
 
   if ($cartItems.length > 0) {
@@ -24,7 +21,7 @@ $.ajax({
   //   .find(".cart__item__subtotal")
   //   .text();
   // var randomItemPrice = /* clean up raw text */;
-  console.log($randomItem, $randomItemQty);
+  console.log($randomItemColor);
 
   //use jQuery to grab info from data to populate the modal with:
   //title
@@ -37,6 +34,18 @@ $.ajax({
     $(".hide-modal").css({
       display: "none"
     });
+  };
+
+  var testQty = function() {
+    if (Number($randomItemQty) >= 2) {
+      return $randomItemQty;
+    } else {
+      return 1;
+    }
+  };
+
+  var testFun = function() {
+    return "HOWDY!";
   };
 
   function openModal() {
@@ -60,9 +69,11 @@ $.ajax({
         $randomItemImage +
         "</span><div class='product-details'><h5 class='product-title'>" +
         $randomItemTitle +
-        "</h5><h6 class='cart-qty'>Qty:" +
-        $randomItemQty +
-        "</h6><h6 class='product-color'>Black</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
+        "</h5><h6 class='cart-qty'>Qty: " +
+        testQty() +
+        "</h6><h6 class='product-color'>" +
+        testFun() +
+        "</h6></div><h6 class='multiple-items-message'>Showing 1 of 3</h6><button class='cta-cart-button'>View Cart</button></div>"
     );
     $(function() {
       $(".modal").css({
@@ -107,13 +118,14 @@ $.ajax({
         // height: "130px",
         float: "left",
         // display: "inline-block",
-        "margin-top": "2rem",
-        "margin-left": "3rem",
+        "margin-top": "1rem",
+        "margin-left": "4rem",
         cursor: "pointer"
       });
       $(".product-details").css({
         float: "right",
-        "margin-right": "3rem"
+        "margin-right": "9rem",
+        diplay: "block"
       });
       $(".product-title").css({
         "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
@@ -150,6 +162,7 @@ $.ajax({
         "text-align": "center",
         "font-family": "Gotham Narrow SSm A, Gotham Narrow SSm B, Helvetica, sans-serif",
         margin: ".5rem",
+        display: "inline-block",
         color: "#E1E1E1",
         "line-height": "1.5rem",
         "font-size": "1rem",
