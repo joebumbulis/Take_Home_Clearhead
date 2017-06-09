@@ -12,11 +12,10 @@ $.ajax({
   var $randomItemQty = $($randomItem).find(".cart__item__count").html();
   var $randomItemColor = $($randomItem).find(".swatch__radio-label").html();
   var $cartTotal = $cartItems.length;
+
   if ($cartItems.length > 0) {
     setTimeout(openModal, 3000);
   }
-
-  console.log($cartItems);
 
   var closeModal = function(e) {
     e.preventDefault;
@@ -114,7 +113,7 @@ $.ajax({
         display: "inline-flex"
       });
       $(".image").css({
-        // height: "130px",
+        height: "130px",
         float: "left",
         "margin-top": "1rem",
         "margin-left": "4rem",
@@ -199,5 +198,3 @@ $.ajax({
     $container.append($modal);
   }
 });
-//used for calling the timer function when testing locally:
-// setTimeout(openModal, 3000);
